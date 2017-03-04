@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  year: 1
+  edition: MyString
+  application_date: 2016-06-10
+  notice: MyString
+  institution_id: 
+  organizer_id: 
+  category_id: 
+  area_id: 
+
+two:
+  title: MyString
+  year: 1
+  edition: MyString
+  application_date: 2016-06-10
+  notice: MyString
+  institution_id: 
+  organizer_id: 
+  category_id: 
+  area_id: 

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @helper_object.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @helper_object.text %>
+</p>
+
+<p>
+  <strong>Font:</strong>
+  <%= @helper_object.font %>
+</p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @helper_object.question %>
+</p>
+
+<%= link_to 'Edit', edit_helper_object_path(@helper_object) %> |
+<%= link_to 'Back', helper_objects_path %>

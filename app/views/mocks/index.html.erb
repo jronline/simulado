@@ -1,0 +1,63 @@
+<%- model_class = Mock -%>
+
+
+<!DOCTYPE html>
+<html>
+
+<body>
+  <div>
+    <div class="page-header">
+      <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><%= model_class.human_attribute_name(:id) %></th>
+          <th><%= model_class.human_attribute_name(:title) %></th>
+          <th><%= model_class.human_attribute_name(:year) %></th>
+          <th><%= model_class.human_attribute_name(:edition) %></th>
+          <th><%= model_class.human_attribute_name(:application_date) %></th>
+          <th><%= model_class.human_attribute_name(:notice) %></th>
+          <th><%= model_class.human_attribute_name(:institution_id) %></th>
+          <th><%= model_class.human_attribute_name(:organizer_id) %></th>
+          <th><%= model_class.human_attribute_name(:category_id) %></th>
+          <th><%= model_class.human_attribute_name(:area_id) %></th>
+          <th><%= model_class.human_attribute_name(:created_at) %></th>
+          <th><%=t '.actions', :default => t("helpers.actions") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @mocks.each do |mock| %>
+          <tr>
+            <td><%= mock.id %></td>
+            <td><%= link_to mock.title, mock_path(mock) %></td>
+            <td><%= mock.year %></td>
+            <td><%= mock.edition %></td>
+            <td><%= mock.application_date %></td>
+            <td><%= mock.notice %></td>
+            <td><%= mock.institution.title %></td>
+            <td><%= mock.organizer.title %></td>
+            <td><%= mock.category.title %></td>
+            <td><%= mock.area.title %></td>
+            <td><%= mock.created_at.strftime("%d/%m/%Y") %></td>
+            <td>
+              <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                          edit_mock_path(mock), :class => 'btn btn-default btn-xs' %>
+              <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                          mock_path(mock),
+                          :method => :delete,
+                          :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                          :class => 'btn btn-xs btn-danger' %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  
+    <%= link_to t('.new', :default => t("helpers.links.new")), new_mock_path, :class => 'btn btn-primary' %>
+  </div>
+
+</body>
+<script src="/assets/application-ad5bf39cf1fb0e4b3710fe430c3c9776b68f1a7936e5e14d95559560a4c9ef76.js" data-turbolinks-track="true"></script>
+
+</html>

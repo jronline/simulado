@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Helper Objects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Text</th>
+      <th>Font</th>
+      <th>Question</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @helper_objects.each do |helper_object| %>
+      <tr>
+        <td><%= helper_object.title %></td>
+        <td><%= helper_object.text %></td>
+        <td><%= helper_object.font %></td>
+        <td><%= helper_object.question %></td>
+        <td><%= link_to 'Show', helper_object %></td>
+        <td><%= link_to 'Edit', edit_helper_object_path(helper_object) %></td>
+        <td><%= link_to 'Destroy', helper_object, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Helper object', new_helper_object_path %>
