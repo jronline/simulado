@@ -1,6 +1,7 @@
 class MocksController < ApplicationController
   before_action :set_mock, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  
   # GET /mocks
   # GET /mocks.json
   def index

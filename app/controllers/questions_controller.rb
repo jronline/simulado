@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /questions
   # GET /questions.json
@@ -73,4 +74,5 @@ class QuestionsController < ApplicationController
     def question_params
       params.require(:question).permit(:number, :question_type_id, :veracity, :exam_id)
     end
+    
 end
