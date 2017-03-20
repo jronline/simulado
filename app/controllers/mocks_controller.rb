@@ -29,7 +29,7 @@ class MocksController < ApplicationController
 
     respond_to do |format|
       if @mock.save
-        format.html { redirect_to @mock, notice: 'Mock was successfully created.' }
+        format.html { redirect_to @mock, notice: t("helpers.informations.successfully_created", :model => @mock.model_name.human.titleize) }
         format.json { render :show, status: :created, location: @mock }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class MocksController < ApplicationController
   def update
     respond_to do |format|
       if @mock.update(mock_params)
-        format.html { redirect_to @mock, notice: 'Mock was successfully updated.' }
+        format.html { redirect_to @mock, notice: t("helpers.informations.successfully_updated", :model => @mock.model_name.human.titleize) }
         format.json { render :show, status: :ok, location: @mock }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class MocksController < ApplicationController
   def destroy
     @mock.destroy
     respond_to do |format|
-      format.html { redirect_to mocks_url, notice: 'Mock was successfully destroyed.' }
+      format.html { redirect_to mocks_url, notice: t("helpers.informations.successfully_destroyed", :model => @mock.model_name.human.titleize) }
       format.json { head :no_content }
     end
   end

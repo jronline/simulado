@@ -16,15 +16,4 @@
  *= require_self
  # SASS
  */
-
-.centered {
-    margin: 0 auto !important;
-    float: none !important;
-}
-
-.centered-horizontal {
-  position: absolute;
-  top: 50%;
-  left:50%;
-  transform: translate(-50%,-50%);
-}
+ 

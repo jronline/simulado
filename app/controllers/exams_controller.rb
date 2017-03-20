@@ -30,7 +30,7 @@ class ExamsController < ApplicationController
 
     respond_to do |format|
       if @exam.save
-        format.html { redirect_to @exam, notice: 'Exam was successfully created.' }
+        format.html { redirect_to @exam, notice: t("helpers.informations.successfully_created", :model => @exam.model_name.human.titleize) }
         format.json { render :show, status: :created, location: @exam }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class ExamsController < ApplicationController
   def update
     respond_to do |format|
       if @exam.update(exam_params)
-        format.html { redirect_to @exam, notice: 'Exam was successfully updated.' }
+        format.html { redirect_to @exam, notice: t("helpers.informations.successfully_updated", :model => @exam.model_name.human.titleize) }
         format.json { render :show, status: :ok, location: @exam }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class ExamsController < ApplicationController
   def destroy
     @exam.destroy
     respond_to do |format|
-      format.html { redirect_to exams_url, notice: 'Exam was successfully destroyed.' }
+      format.html { redirect_to exams_url, notice: t("helpers.informations.successfully_destroyed", :model => @exam.model_name.human.titleize) }
       format.json { head :no_content }
     end
   end

@@ -31,7 +31,7 @@ class HelperObjectsController < ApplicationController
 
     respond_to do |format|
       if @helper_object.save
-        format.html { redirect_to question_path(@question), notice: 'Helper object was successfully created.' }
+        format.html { redirect_to question_path(@question), notice: t("helpers.informations.successfully_created", :model => @helper_object.model_name.human.titleize) }
         format.json { render :show, status: :created, location: @helper_object }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class HelperObjectsController < ApplicationController
   def update
     respond_to do |format|
       if @helper_object.update(helper_object_params)
-        format.html { redirect_to @helper_object, notice: 'Helper object was successfully updated.' }
+        format.html { redirect_to @helper_object, notice: t("helpers.informations.successfully_created", :model => @helper_object.model_name.human.titleize) }
         format.json { render :show, status: :ok, location: @helper_object }
       else
         format.html { render :edit }
@@ -61,7 +61,7 @@ class HelperObjectsController < ApplicationController
     @helper_object = HelperObject.find(params[:id])
     @helper_object.destroy
     respond_to do |format|
-      format.html { redirect_to question_path(@question), notice: 'Helper object was successfully destroyed.' }
+      format.html { redirect_to question_path(@question), notice: t("helpers.informations.successfully_created", :model => @helper_object.model_name.human.titleize) }
       format.json { head :no_content }
     end
   end

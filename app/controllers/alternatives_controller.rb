@@ -30,7 +30,7 @@ class AlternativesController < ApplicationController
 
     respond_to do |format|
       if @alternative.save
-        format.html { redirect_to @question, notice: 'Alternative was successfully created.' }
+        format.html { redirect_to @question, notice: t("helpers.informations.successfully_created", :model => @alternative.model_name.human.titleize) }
         format.json { render :show, status: :created, location: @alternative }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class AlternativesController < ApplicationController
   def update
     respond_to do |format|
       if @alternative.update(alternative_params)
-        format.html { redirect_to @question, notice: 'Alternative was successfully updated.' }
+        format.html { redirect_to @question, notice: t("helpers.informations.successfully_updated", :model => @alternative.model_name.human.titleize) }
         format.json { render :show, status: :ok, location: @alternative }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class AlternativesController < ApplicationController
     @alternative = Alternative.find(params[:id])
     @alternative.destroy
     respond_to do |format|
-      format.html { redirect_to question_path(@question), notice: 'Alternative was successfully destroyed.' }
+      format.html { redirect_to question_path(@question), notice: t("helpers.informations.successfully_destroyed", :model => @alternative.model_name.human.titleize) }
       format.json { head :no_content }
     end
   end

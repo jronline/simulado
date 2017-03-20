@@ -6,3 +6,25 @@
   =require twitter-bootstrap-static/fontawesome
   */
 
+.centered {
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+.centered-horizontal {
+  margin: 0 auto !important;
+  float: none !important;
+}
+
+body { 
+  padding-top: 50px; 
+  
+}
+
+panel-footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

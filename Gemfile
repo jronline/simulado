@@ -7,6 +7,8 @@ gem 'devise'
 gem "paperclip"
 gem 'bootstrap_sb_admin_base_v2'
 gem 'devise-bootstrap-views'
+gem 'i18n'
+gem 'rails-i18n'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
