@@ -14,10 +14,16 @@ pt-BR:
       category: Categoria
       exam: Prova
       helper_object: Componente do Cabeçalho
-      institution: Instituição
+      institution:
+        one: Instituição
+        other: Instituições
       mock: Simulado
-      organizer: Organizador
-      question: Questão
+      organizer:
+        one: Organizador
+        other: Organizadores
+      question:
+        one: Questão
+        other: Questões
     attributes:
       alternative:
         title: "Título"

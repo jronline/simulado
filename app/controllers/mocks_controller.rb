@@ -1,6 +1,7 @@
 class MocksController < ApplicationController
   before_action :set_mock, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  # before_filter :require_admin # ativar após criar a tela de usuários comuns
   
   # GET /mocks
   # GET /mocks.json

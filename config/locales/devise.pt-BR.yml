@@ -28,6 +28,7 @@ pt-BR:
       timeout: A sua sessão expirou, por favor, faça login novamente para continuar.
       unauthenticated: Para continuar, faça login ou registre-se.
       unconfirmed: Antes de continuar, confirme a sua conta.
+      restrict_to_admin: Esta área é restrita aos administradores do sistema.
     mailer:
       confirmation_instructions:
         action: Confirmar minha conta

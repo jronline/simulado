@@ -1,5 +1,7 @@
 class HelperObjectsController < ApplicationController
   before_action :set_helper_object, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_filter :require_admin
   
 
   # GET /helper_objects
