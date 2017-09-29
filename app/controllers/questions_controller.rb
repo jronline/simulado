@@ -6,7 +6,8 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all
+    @q = Question.ransack(params[:q])
+    @questions = @q.result(distinct: true)
   end
 
   # GET /questions/1
@@ -73,7 +74,7 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.require(:question).permit(:number, :question_type_id, :veracity, :exam_id)
+      params.require(:question).permit(:number, :question_type_id, :veracity, :exam_id, :title)
     end
     
 end

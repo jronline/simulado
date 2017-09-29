@@ -47,7 +47,7 @@ class HelperObjectsController < ApplicationController
   def update
     respond_to do |format|
       if @helper_object.update(helper_object_params)
-        format.html { redirect_to @helper_object, notice: t("helpers.informations.successfully_created", :model => @helper_object.model_name.human.titleize) }
+        format.html { redirect_to @helper_object.question, notice: t("helpers.informations.successfully_created", :model => @helper_object.model_name.human.titleize) }
         format.json { render :show, status: :ok, location: @helper_object }
       else
         format.html { render :edit }

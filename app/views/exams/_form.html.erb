@@ -15,13 +15,7 @@
     </div>
   <% end %>
   
-    <div class="form-group">
-    <%= f.label :mock_id, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.select :mock_id, options_for_select(Mock.all.map{ |i| [i.title, i.id]}), :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:mock_id) %>
-  </div>
+ 
   <div class="form-group">
     <%= f.label :title, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
@@ -34,7 +28,7 @@
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                exams_path, :class => 'btn btn-default' %>
+               @exam.mock, :class => 'btn btn-default' %>
     </div>
   </div>
 

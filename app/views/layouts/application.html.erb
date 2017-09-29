@@ -22,15 +22,19 @@
 						        <li class="dropdown">
 						          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CADASTROS<span class="caret"></span></a>
 						          <ul class="dropdown-menu">
+						            <li><%= link_to 'Usuários', users_path %></li>
 						            <li><%= link_to 'Simulados', mocks_path %></li>
+						            <li><%= link_to 'Questões', questions_path %></li>
+						            <li><%= link_to 'Provas Personalizadas', user_exams_path %></li>
 						            <li><%= link_to 'Instituições', institutions_path %></li>
 						            <li><%= link_to 'Organizadores', organizers_path %></li>
 						            <li><%= link_to 'Categorias', categories_path %></li>
 						            <li><%= link_to 'Áreas do Conhecimento', areas_path %></li>
+						            <li><%= link_to 'Tipos de questão', question_types_path %></li>
 						          </ul>
 						        </li>
 								<% if user_signed_in? %>
-									<li><%= link_to( current_user.email, edit_user_registration_path) %></li>
+									<li><%= link_to( current_user.name, edit_user_registration_path) %></li>
 									<li><%= link_to t('.sign_out', default: 'Sair'), destroy_user_session_path, :method => :delete %></li>
 								<% else %>
 									<li><%= link_to(t('.sign_in', default: 'Entrar'), new_user_session_path) %></li>
@@ -40,6 +44,9 @@
 						</div><!--/.nav-collapse -->
 					</div><!--/.container-fluid -->
 				</nav>
+	        <% else %>
+	        	<%= link_to t('.sign_out', default: 'Sair'), destroy_user_session_path, :method => :delete if user_signed_in? %>
+	        	<li><%= link_to(t('.sign_in', default: 'Entrar'), new_user_session_path) unless user_signed_in? %></li>
 	        <% end %>
 			<%# if notice || alert %>
     		<!--   <p class="notice alert alert-dismissable"><%# notice %></p>-->

@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
   has_many :alternatives, :through => :answer
   has_many :answers
   
+  validates :name, :presence => true
 end

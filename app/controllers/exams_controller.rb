@@ -31,7 +31,7 @@ class ExamsController < ApplicationController
 
     respond_to do |format|
       if @exam.save
-        format.html { redirect_to @exam, notice: t("helpers.informations.successfully_created", :model => @exam.model_name.human.titleize) }
+        format.html { redirect_to @exam, notice: t("helpers.informations.successfully_created", model: @exam.model_name.human.titleize) }
         format.json { render :show, status: :created, location: @exam }
       else
         format.html { render :new }
@@ -57,9 +57,10 @@ class ExamsController < ApplicationController
   # DELETE /exams/1
   # DELETE /exams/1.json
   def destroy
+    mock = @exam.mock
     @exam.destroy
     respond_to do |format|
-      format.html { redirect_to exams_url, notice: t("helpers.informations.successfully_destroyed", :model => @exam.model_name.human.titleize) }
+      format.html { redirect_to mock, notice: t("helpers.informations.successfully_destroyed", :model => @exam.model_name.human.titleize) }
       format.json { head :no_content }
     end
   end

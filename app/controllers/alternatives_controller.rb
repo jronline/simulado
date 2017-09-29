@@ -67,13 +67,14 @@ class AlternativesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_alternative
-      @alternative = Alternative.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_alternative
+    @alternative = Alternative.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def alternative_params
-      params.require(:alternative).permit(:title, :veracity, :question_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def alternative_params
+    params.require(:alternative).permit(:title, :veracity, :question_id, 
+                                        :image)
+  end
 end

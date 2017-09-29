@@ -20,8 +20,8 @@
 
 body { 
   padding-top: 50px;
-  background: url('background2.jpg') no-repeat center center fixed;
-  
+  /*background: url('background2.jpg') no-repeat center center fixed;
+  */
 }
 
 panel-footer {
@@ -29,3 +29,13 @@ panel-footer {
     bottom: 0;
     width: 100%;
 }
+
+.small-column {
+   text-align: right;
+   width: 20%;
+   background-color: #edeff2;
+ }
+ 
+ .large-column {
+   width: 80%;
+ }

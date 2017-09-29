@@ -4,6 +4,7 @@ pt-BR:
       user:
         current_password: Senha atual
         email: Email
+        name: Nome
         password: Senha
         password_confirmation: Confirme sua senha
         remember_me: Lembre-se de mim

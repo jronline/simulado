@@ -24,9 +24,21 @@ pt-BR:
       question:
         one: Questão
         other: Questões
+      question_type:
+        one: Tipo de questão
+        other: Tipos de questões
+      user:
+        one: Usuário
+        other: Usuários
+      user_exam:
+        one:  Prova
+        other:  Provas
+      user_exam_question:
+        one: Questão
+        others: Questões
     attributes:
       alternative:
-        title: "Título"
+        title: "Descrição"
         veracity: "Veracidade"
         questio_id: "Questão"
         created_at: "Data Criação"
@@ -87,7 +99,18 @@ pt-BR:
         exam_id: "Prova"
         created_at: "Data Criação"
         updated_at: "Data Alteração"
-        question_type: "Tipo de Questão"
+      user:
+        email: "E-mail"
+        admin: "Administrador?"
+        created_at: "Data Criação"
+        updated_at: "Data Alteração"
+      user_exam:
+        title: 'Título'
+        user_id: 'Professor'
+        area_id: 'Area do Conhecimento'
+        date_application: 'Dada da Aplicação'
+        created_at: "Data Criação"
+        updated_at: "Data Alteração"
   date:
     abbr_day_names:
     - Dom
@@ -227,6 +250,8 @@ pt-BR:
         other: 'Não foi possível gravar %{model}: %{count} erros'
   helpers:
     actions: 'Ações'
+    confirmations:
+      are_you_sure?: 'Você tem certeza?'
     select:
       prompt: Por favor selecione
     submit:
@@ -315,3 +340,6 @@ pt-BR:
       long: "%d de %B de %Y, %H:%M"
       short: "%d de %B, %H:%M"
     pm: ''
+  "true": "Sim"
+  "false": "Não"
+  

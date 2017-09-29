@@ -11,14 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170321164207) do
+ActiveRecord::Schema.define(version: 20170906230400) do
 
   create_table "alternatives", force: :cascade do |t|
     t.text     "title"
     t.boolean  "veracity"
     t.integer  "question_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "alternatives", ["question_id"], name: "index_alternatives_on_question_id"
@@ -44,6 +48,20 @@ ActiveRecord::Schema.define(version: 20170321164207) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.string   "data_fingerprint"
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "ckeditor_assets", ["type"], name: "index_ckeditor_assets_on_type"
 
   create_table "exams", force: :cascade do |t|
     t.string   "title"
@@ -117,10 +135,32 @@ ActiveRecord::Schema.define(version: 20170321164207) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.integer  "question_type_id"
+    t.text     "title"
   end
 
   add_index "questions", ["exam_id"], name: "index_questions_on_exam_id"
   add_index "questions", ["question_type_id"], name: "index_questions_on_question_type_id"
+
+  create_table "user_exam_questions", force: :cascade do |t|
+    t.integer  "order"
+    t.float    "rating"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "user_exam_id"
+    t.integer  "question_id"
+  end
+
+  create_table "user_exams", force: :cascade do |t|
+    t.text     "title"
+    t.integer  "user_id"
+    t.integer  "area_id"
+    t.date     "date_application"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "user_exams", ["area_id"], name: "index_user_exams_on_area_id"
+  add_index "user_exams", ["user_id"], name: "index_user_exams_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -136,6 +176,7 @@ ActiveRecord::Schema.define(version: 20170321164207) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.boolean  "admin",                  default: false
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

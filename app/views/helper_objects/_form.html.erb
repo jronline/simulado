@@ -1,4 +1,4 @@
-<%= form_for(@helper_object) do |f| %>
+<%= form_for @helper_object, :html => { :class => "form-horizontal mock" } do |f| %>
   <% if @helper_object.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@helper_object.errors.count, "error") %> prohibited this helper_object from being saved:</h2>
@@ -11,23 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_area :title %>
+  
+
+  <div class="form-group">
+    <%= f.label :title, :class => 'control-label col-lg-2' %><br>
+    <div class="col-lg-10">
+      <%= f.text_area :title, :rows => "2", :class => 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
+  
+  <div class="form-group">
+    <%= f.label :text, :class => 'control-label col-lg-2' %><br>
+    <div class="col-lg-10">
+      <%= f.text_area :text, :rows => "8", :class => 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :font %><br>
-    <%= f.text_area :font %>
+  
+  <div class="form-group">
+    <%= f.label :font, :class => 'control-label col-lg-2' %><br>
+    <div class="col-lg-10">
+      <%= f.text_area :font, :rows => "1", :class => 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :question_id %><br>
-    <%= f.text_field :question_id %>
-  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'btn btn-primary' %>
   </div>
 <% end %>

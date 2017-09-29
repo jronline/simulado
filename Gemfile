@@ -9,7 +9,8 @@ gem 'bootstrap_sb_admin_base_v2'
 gem 'devise-bootstrap-views'
 gem 'i18n'
 gem 'rails-i18n'
-
+gem 'ransack'
+gem 'ckeditor'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
@@ -50,7 +51,8 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
+  gem 'rubocop'
+  
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end

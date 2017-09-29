@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   
+  get 'user_exam_questions/index'
+
+  get 'user_exam_controller/index'
+
+  resources :user_exams
+  mount Ckeditor::Engine => '/ckeditor'
+  get 'users/index'
+
   devise_for :users
   resources :question_types
   resources :answers
@@ -11,20 +19,31 @@ Rails.application.routes.draw do
   resources :mocks do
     resources :exams, except: :index
   end
+  
+  resources :user_exam do 
+    resources :user_exam_questions
+  end
+  
+  
   resources :exams, except: :index
   resources :exams, except: :index do
-    resources :questions, except: :index
+    resources :questions
   end
-  resources :questions, except: :index do
+  resources :questions do
     resources :helper_objects
     resources :alternatives, except: :index
   end
+  resources :helper_objects
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'mocks#index'
 
+  match '/users',   to: 'users#index',   via: 'get'
+  # match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -44,7 +44,7 @@ class MocksController < ApplicationController
   def update
     respond_to do |format|
       if @mock.update(mock_params)
-        format.html { redirect_to @mock, notice: t("helpers.informations.successfully_updated", :model => @mock.model_name.human.titleize) }
+        format.html { redirect_to @mock, notice: t('helpers.informations.successfully_updated', model: @mock.model_name.human.titleize) }
         format.json { render :show, status: :ok, location: @mock }
       else
         format.html { render :edit }
