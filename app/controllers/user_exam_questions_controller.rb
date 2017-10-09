@@ -3,7 +3,6 @@ class UserExamQuestionsController < ApplicationController
   end
   
   def create
-
     @user_exam = UserExam.find(params[:user_exam_id])
     @user_exam_question = @user_exam.user_exam_questions.create(user_exam_question_params)
 
@@ -16,6 +15,10 @@ class UserExamQuestionsController < ApplicationController
         format.json { render json: @user_exam_question.errors, status: :unprocessable_entity }
       end
     end
+  end
+  
+  def edit
+    
   end
     
   def destroy
