@@ -44,6 +44,8 @@ Rails.application.routes.draw do
   match '/users',   to: 'users#index',   via: 'get'
   # match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
   
+  get "user_exam_question/new_custom_question" => 'user_exam_question#new_custom_question', :as => :new_custom_question
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

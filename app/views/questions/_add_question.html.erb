@@ -1,0 +1,11 @@
+<div class="col-sm-12" id="adicionar_questao" style="padding-top: 0.5cm;">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <div class="text-center">Adicionar Questão ao</div>
+      </div>
+      <div class="panel-body panel-lg">
+        
+          <%= select(:user_exam_id, options_for_select(current_user.user_exams.map{ |i| [i.title, i.id]})) %>
+         
+    </div>  
+</div>

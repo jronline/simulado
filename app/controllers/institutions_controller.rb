@@ -10,6 +10,7 @@ class InstitutionsController < ApplicationController
   # GET /institutions/1
   # GET /institutions/1.json
   def show
+  end
 
   # GET /institutions/new
   def new
@@ -18,6 +19,7 @@ class InstitutionsController < ApplicationController
 
   # GET /institutions/1/edit
   def edit
+  end
   
   # POST /institutions
   # POST /institutions.json
@@ -70,4 +72,5 @@ class InstitutionsController < ApplicationController
   def institution_params
     params.require(:institution).permit(:title, :state)
   end
+  
 end

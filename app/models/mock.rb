@@ -3,5 +3,5 @@ class Mock < ActiveRecord::Base
   belongs_to :organizer
   belongs_to :category
   belongs_to :area
-  has_many :exams
+  has_many :exams, dependent: :destroy
 end

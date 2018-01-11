@@ -1,4 +1,4 @@
 class Exam < ActiveRecord::Base
   belongs_to :mock
-  has_many :questions
+  has_many :questions, dependent: :destroy
 end

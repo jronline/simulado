@@ -77,43 +77,9 @@
           </div>
         <% end %>
       </div>
-      
-      <div class="col-sm-12" id="adicionar_questao" style="padding-top: 0.5cm;">
-        <div class="panel panel-info">
-          <div class="panel-heading">
-            <div class="text-center">Adicionar Questão</div>
-          </div>
-          <div class="panel-body panel-lg">
-            <%= form_for([@user_exam, @user_exam.user_exam_questions.build]) do |f| %>
-              <div class="col-sm-6">
-                <%= f.label :order, :class => 'control-label' %><br>
-                <%= f.number_field :order, :class => 'form-control' %>
-              </div>
-              <div class="col-sm-6">
-                <%= f.label :rating, :class => 'control-label' %><br>
-                <%= f.text_field :rating, :class => 'form-control' %>
-              </div>
-              <div class="col-sm-12">
-                <%= f.label :question_id, :class => 'control-label' %><br>
-                <%= f.select(:question_id, options_for_select(Question.all.map{ |i| [i.number, i.id]})) %>
-              </div>
-              <div class="col-sm-12 pull-right">
-                <%= f.submit :class => 'btn btn-xs btn-info' %>
-              </div>
-            <% end %>
-          </div>
-        </div>  
-      </div>
     </main>
+    
   </div>
 </div>
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="../../dist/js/bootstrap.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    

@@ -11,6 +11,7 @@ gem 'i18n'
 gem 'rails-i18n'
 gem 'ransack'
 gem 'ckeditor'
+gem 'bootstrap-sass'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
@@ -57,3 +58,6 @@ group :development do
   gem 'spring'
 end
 
+group :development do
+  gem "rails-erd"
+end
